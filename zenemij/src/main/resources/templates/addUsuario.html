@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}"
+	href="../static/css/bootstrap.css">
+<link rel="stylesheet"
+	href="//use.fontawesome.com/releases/v5.3.1/css/all.css">
+<link
+	href="//db.onlinewebfonts.com/c/23c0fcab84d99da0de762de7e220a6e1?family=Europa"
+	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"
+	href="../static/css/style.css" />
+
+<title>Añadir Usuario | Zenemij</title>
+</head>
+<body class="text-uppercase">
+
+<div class="container fondoNavbar w-100">
+		<header class="blog-header">
+			<div
+				class="row flex-nowrap justify-content-between align-items-center">
+				<div class="col-4 pt-1">
+					<a href=""> <img th:src="@{/img/jm.PNG}"
+						src="../static/img/jm.PNG" alt="Logo" class="imgLogo">
+					</a>
+				</div>
+				<div class="col-4 text-center">
+					<a class="blog-header-logo text-dark logoNavbar"  th:href="@{/catalog/}">ZENEMIJ</a>
+				</div>
+
+				<div class="col-4 d-flex justify-content-end align-items-center">
+					<!-- Authentication Links -->
+
+
+
+
+					<a><i class="fa fa-lg fa-shopping-cart"></i></a>
+				</div>
+			</div>
+		</header>
+<div class="nav-scroller py-1 mb-2">
+			<nav class="nav d-flex justify-content-between">
+				<a class="p-2 text-muted" th:href="@{/catalog/}">Productos</a> <a
+					class="p-2 text-muted"th:href="@{/catalog/addProducto}">Añadir Productos</a> <a
+					class="p-2 text-muted" th:href="@{/catalog/usuarios}">Usuarios</a> <a
+					class="p-2 text-muted" th:href="@{/catalog/addUsuario}">Registro Usuarios</a>
+
+
+			</nav>
+		</div>
+	</div>
+
+<!-- FORMULARIO -->
+		<section id="form">
+			<div class="card mx-auto my-5" style="width: 50rem">
+				<div class="card-header">
+					<h5>Añadir Usuario</h5>
+				</div>
+				<div class="card-body mt-3">
+					<form method="POST" action="addUsuario">
+						<div class="form-group">
+							<label for="usuario">Usuario</label> <input id="usuario" type="text"
+								class="form-control" name="usuario" required autofocus>
+						</div>
+						<div class="form-group">
+							<label for="contrasena">Contraseña</label>
+							<input id="contrasena" type="password"
+								class="form-control" name="contrasena" required autofocus>
+						</div>
+						<div class="form-group">
+							<label for="nombre">Nombre</label> <input id="nombre" type="text"
+								class="form-control" name="nombre" required autofocus>
+						</div>
+						<div class="form-group">
+							<label for="apellidos">Apellidos</label> <input id="apellidos" type="text"
+								class="form-control" name="apellidos" required>
+						</div>
+						
+						<div class="form-group text-center mt-5 mb-3">
+							<button type="submit" class="btn btn-primary mb-2">Añadir</button>
+							<br>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+                <ul class="adress">
+                    <span>Adress</span>
+                    <li>
+
+                        <img class="imgLogo" src='img/jm.png'>
+                    </li>
+
+                    <li>
+                        <p>+90 1234 56789</p>
+                    </li>
+
+                    <li>
+                        <p>info@gmail.com</p>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <ul class="contact">
+                    <span>Contact</span>
+                    <li>
+                        <a href="{{url('/')}}">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="{{url('/componentes')}}">Productos</a>
+                    </li>
+
+                    <li>
+                        <a href="{{url('/ordenadores')}}">Añadir Productos</a>
+                    </li>
+
+                    <li>
+                        <a href="{{url('/telefonia')}}">Usuarios </a>
+                    </li>
+
+                    <li>
+                        <a href="{{url('/fotografia')}}">Registro Usuarios</a>
+                    </li>
+                  
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <ul class="social">
+                    <span>Social</span>
+                    <li>
+                        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fab fa-github fa-2x"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fab fa-tumblr fa-2x"></i></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</footer>
+
+	<script th:script="@{js/bootstrap.js}" src="../static/js/bootstrap.js"></script>
+</body>
+
+
+</html>

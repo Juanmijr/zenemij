@@ -1,17 +1,25 @@
 package com.juanmi.zenemij.modelo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.*;
 
 
 	@Entity
 	@Table(name = "producto")
 	public class Producto {
+		
+		
+	public Producto( String modelo, String descripcion, int precio, int numExistencias, String imagen) {
+			super();
+			
+			this.modelo = modelo;
+			this.descripcion = descripcion;
+			this.precio = precio;
+			this.numExistencias = numExistencias;
+			this.imagen = imagen;
+		}
 		
 		
 	public Producto(int id, String modelo, String descripcion, int precio, int numExistencias, String imagen) {
@@ -44,6 +52,10 @@ import javax.persistence.Table;
 	private int numExistencias;
 	@Column(name = "imagen")
 	private String imagen;
+	
+	
+	@ManyToMany(mappedBy = "productos")
+    private List<Usuario> usuarios;
 	
 	public String getImagen() {
 		return imagen;
@@ -82,6 +94,32 @@ import javax.persistence.Table;
 	public void setNumExistencias(int numExistencias) {
 		this.numExistencias = numExistencias;
 	}
+
+
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+	
+	public void addUsuario(Usuario usuario){
+        if(this.usuarios == null){
+            this.usuarios = new ArrayList<>();
+        }
+        
+        this.usuarios.add(usuario);
+    }
+
+	
 	
 	
 }

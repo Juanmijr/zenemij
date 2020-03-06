@@ -9,12 +9,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.juanmi.zenemij.modelo.Producto;
-@Repository("productoJpaRepositorio")
+@Repository("productoJpaRepository")
 public interface ProductoJpaRepositorio extends JpaRepository<Producto,Serializable>{
-public abstract List<Producto> findByModelo(String modelo);
-public abstract List<Producto> findByModeloAndPrecio(String modelo, int precio);
-public abstract List<Producto> findByModeloOrPrecio(String nombre, int precio);
-public abstract List<Producto> findByPrecio(int precio);
-@Transactional
-public abstract void deleteById(int id);
+	public abstract Producto findById(int id);
+	public abstract List<Producto> findByModelo(String name);
+	@Transactional
+	public abstract void deleteById(int id);
 }
